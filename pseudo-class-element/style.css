@@ -1,0 +1,52 @@
+::selection {
+    color: white;
+    background-color: red;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+}
+
+button:visited {
+    background-color: greenyellow;
+}
+
+button:hover {
+    background-color: red;
+}
+
+button:focus {
+    color: blue;
+}
+
+button:active {
+    background-color: pink;
+}
+
+
+/* .parent p:nth-child(2) {
+    color: purple;
+} */
+
+input:read-only {
+    background-color: red;
+}
+
+ :root {
+    background-color: none;
+}
+
+.parent p:first-child::first-letter {
+    color: red;
+}
+
+.parent :nth-child(2)::first-line {
+    background-color: chocolate;
+}
+
+h3::after {
+    content: " hi";
+}

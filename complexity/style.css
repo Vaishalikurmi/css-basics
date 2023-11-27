@@ -1,0 +1,26 @@
+//cascading 
+h1 {
+    color: red;
+}
+
+h1 {
+    color: blue;
+}
+
+// specificity
+.main-heading {
+    color: red;
+}
+
+h2 {
+    color: blue;
+}
+
+//inheritence
+body {
+    color: blue;
+}
+
+span {
+    color: red;
+}
