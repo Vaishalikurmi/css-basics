@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Poppins:wght@500&display=swap');
+@font-face {
+    font-family: "";
+    src: url(./font-folder/);
+}
+
 body {
     font-family: 'Inter', sans-serif;
     font-weight: 400;

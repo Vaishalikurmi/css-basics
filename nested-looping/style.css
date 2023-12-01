@@ -1,8 +1,0 @@
-& div {
-    & :hover {
-        background-color: black;
-    }
-    & pre {
-        color: blue;
-    }
-}
