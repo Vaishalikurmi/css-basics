@@ -1,0 +1,19 @@
+.para1{
+    word-wrap: justify;
+    height: 6.3rem;
+    width: 30rem;
+    background-color: hsla(165, 9%, 44%, 0.5);
+    color: black;
+    border: 5px double  rgb(80, 21, 21);
+    margin: 200px 390px;
+    padding: 30px;
+    border-radius: 8px;
+    text-shadow: 3px 3px 5px crimson;
+    line-height: 21px;
+    word-spacing: 3px;
+}
+ 
+.para1::first-letter{
+    color: red;
+    font-size: 2rem;
+}
