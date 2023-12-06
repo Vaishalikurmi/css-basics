@@ -7,26 +7,8 @@
 .img-cotainer1{
     height: 100vh;
     width: 100%;
-    /* background-color: gray;
-    background-image: url("../img/img1.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center left; */
-    /* border: 5px solid red; */
-    padding: 10px;
-    background: url("../img/img2.jpg") no-repeat scroll center;
-    background-size: contain ;
-    /* background-clip: padding-box; */
-    background-origin: padding-box;
-}
-
-.img-container2{
-    width: 100%;
-    height: 100vh;
-    /* background-image: url("../img/img1.jpg") , url("../img/img2.jpg");
-    background-repeat: no-repeat;
-    background-position: left top , right top ;
-    background-attachment: fixed, scroll ; */
-    background: url("../img/img1.jpg") no-repeat top left,url("../img/img2.jpg") no-repeat top right;
-    background-size: contain, cover;
+    border: black solid 5px;
+    padding: 15px;
+    background: url("../img/img2.jpg") no-repeat scroll;
+    background-origin: content-box;
 }
