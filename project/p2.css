@@ -18,7 +18,7 @@ body{
     background: url("../img/img4.png") no-repeat scroll center;
     background-size: cover;
     line-height: 2;
-    text-align: center;
+    text-align: top center;
     padding-top: 200px;
 }
 h1,p{
