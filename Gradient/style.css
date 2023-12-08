@@ -9,6 +9,81 @@ body{
     font-weight: 400;
 }
 
+.content1{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(red , yellow);
+}
 
+.content2{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to right, orange 40%,white 30%,green 30%);
+}
 
+.content3{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to bottom right, red , yellow , green);
+}
 
+.content4{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(180deg, red , yellow , green);
+}
+
+.content5{
+    height: 100vh;
+    width: 100%;
+    background-image: repeating-linear-gradient(to right bottom, rgb(224, 95, 95) , rgba(148, 148, 66,0.4) , rgba(0, 97, 0, 0.7) 300px);
+}
+
+.content6{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to right, black, green),
+    linear-gradient(to right, red, gray);
+}
+.content7{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to top right, rgba(139, 139, 139,0.5), rgba(193, 193, 207,0.3)),
+     url("../img/img2.jpg") ;
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+
+/*radiant grediant */
+
+.content8{
+    height: 100vh;
+    width: 100%;
+    background-image: radial-gradient(orange , white);
+}
+.content9{
+    height: 100vh;
+    width: 100%;
+    background-image: radial-gradient(circle,yellow 50%, red 50%);
+}
+
+.content10{
+    height: 100vh;
+    width: 100%;
+    background-image: radial-gradient(circle at left,yellow 50%, red 50%);
+}
+
+.content11{
+    height: 100vh;
+    width: 100%;
+    background-image: repeating-radial-gradient(circle at top,yellow, red 20px)
+}
+
+.content12{
+    height: 100vh;
+    width: 100%;
+    background-image: radial-gradient(circle at top,rgba(255, 255, 125, 0.5), rgba(173, 18, 18, 0.5)),
+    url("../img/img3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
