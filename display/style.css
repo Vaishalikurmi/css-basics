@@ -9,6 +9,16 @@ body{
     font-weight: 400;
 }
 
-p{
-   display: inline;
+h1{
+    text-align: center;
 }
+p,a{
+    border: 1px solid black ;
+    word-spacing: 4px;
+    line-height: 25px;
+    margin: 30px 20px;
+    padding: 5px;
+    display: inline-block;
+}
+
+

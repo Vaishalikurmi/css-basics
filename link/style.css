@@ -9,3 +9,29 @@ body{
     font-weight: 400;
 }
 
+a{
+    display: inline-block;
+    margin: 100px;
+    padding: 10px;
+    text-decoration: none;
+    box-shadow: 2px 3px 3px rgb(90, 88, 88),
+    -1px -3px 3px rgb(90, 88, 88);
+
+}
+
+a:link{
+    background-color: blanchedalmond;
+}
+
+a:visited{
+    background-color: transparent;
+}
+
+a:hover{
+    background-color: black;
+    color: white;
+}
+
+a:active{
+    color: red;
+}
