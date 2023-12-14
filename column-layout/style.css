@@ -9,6 +9,20 @@ body{
     font-weight: 400;
 }
 
-.parent{
+.parent1{
     padding: 50px;
+    column-count: 3;
+    column-rule: dashed rgb(56, 50, 50) 1px;
+    column-gap: 50px;
 }
+
+.parent2{
+    padding: 50px;
+    column-rule: dashed rgb(56, 50, 50) 1px;
+    column-span: all;
+    column-width: 400px;
+    column-gap: 30px;
+}
+
+
+

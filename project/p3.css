@@ -10,15 +10,38 @@ html{
 
 body{
     font-family: "Inter", sans-serif;
+    margin: 50px;
 }
 
-.container{
-    width: 70%;
-    height: 100vh;
-    background: url("../img/back.avif") no-repeat scroll center;
-    background-size: contain;
-    padding-top: 200px;
+.unsplash-card{
+
+    height: 300px;
+    width: 450px;
+    position: relative;
+
+   .unsplash-card-image{
+        height: 300px;
+        width:  auto;
+   }
+
+   .fa-heart,.fa-plus,.fa-arrow-down{
+       font-size: 1.2rem;
+       background-color: white;
+       border-radius: 5px;
+       padding: 7px 15px;
+       margin: 3px;
+       -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+       -ms-border-radius: 5px;
+       -o-border-radius: 5px;
+    }
+
+    .unsplash-card-icone{
+        position: absolute;
+        top:0px;
+        right: 0px;
+    }
+
+
 }
-.heading{
-    text-align: top center;
-}
+
