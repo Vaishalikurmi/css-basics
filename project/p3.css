@@ -24,24 +24,68 @@ body{
         width:  auto;
    }
 
-   .fa-heart,.fa-plus,.fa-arrow-down{
+   .fa-heart,
+   .fa-plus,
+   .fa-arrow-down{
        font-size: 1.2rem;
        background-color: white;
        border-radius: 5px;
+       margin: 5px;
        padding: 7px 15px;
-       margin: 3px;
-       -webkit-border-radius: 5px;
-       -moz-border-radius: 5px;
-       -ms-border-radius: 5px;
-       -o-border-radius: 5px;
+       cursor: pointer;
     }
 
     .unsplash-card-icone{
+        width: 450px;
         position: absolute;
         top:0px;
-        right: 0px;
+        left: 0px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: end;
+    }
+    
+
+    .unsplash-card-detail1-image{
+        position: absolute;
+        bottom: 3px;
+        left: 8px;
+        border-radius: 50px;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        -ms-border-radius: 50px;
+        -o-border-radius: 50px;
+    }
+    .unsplash-card-detail-profile-tittle
+    {
+        width: 450px;
+        color: white;
+        position: absolute;
+        bottom: 20px;
+        left : 60px;
     }
 
+    .unsplash-card-detail-profile-tittle-detail{
+        width: 450px;
+        color: white;
+        position: absolute;
+        bottom: 5px;
+        left : 60px;
+        display: flex;
+        flex-flow: row wrap;
+        gap: 5px;
+    }
+
+    .unsplash-card-download{
+        position: absolute;
+        bottom: 3px;
+        right :3px;
+    }
+
+    .fa-heart:hover,
+   .fa-plus:hover,
+   .fa-arrow-down:hover{
+    visibility: hidden;
+   }
 
 }
-
