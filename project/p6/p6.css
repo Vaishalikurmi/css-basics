@@ -1,0 +1,59 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 65.5%;
+}
+
+body{
+    font-family: "Inter", sans-serif;
+}
+
+h2{
+    font-family: "Inter", sans-serif;
+    font-weight: 500px;
+    font-size: 2rem;
+}
+
+
+.coffee-section{
+    height: 400px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin: 100px auto ;
+    column-gap: 20px;
+    
+    
+
+    & img{
+        height: 150px;
+        width: auto;
+       
+    }
+
+    .coffee-detail{
+        
+        & button{
+            width: 100px;
+            margin-top: 12px;
+            border-radius: 5px;
+            padding: 3px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+        }
+        & p{
+            padding: 5px;
+        }
+
+    }
+
+
+}
+

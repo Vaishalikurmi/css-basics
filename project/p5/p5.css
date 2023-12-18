@@ -1,0 +1,119 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 65.5%;
+}
+
+body{
+    font-family: "Inter", sans-serif;
+    margin: 50px 100px;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    line-height: 1.5;
+}
+
+.card-container{
+
+    height: 330px;
+    width: 500px;
+    position: relative;
+
+    .fa-plus:hover ,
+    .fa-arrow-down:hover,
+    .fa-heart:hover {
+        color: white;
+        cursor: pointer;
+    }
+   
+    &:hover >.card-container-icon{
+        visibility: visible;
+    }
+
+    &:hover >.card-container-details{
+        visibility: visible;
+    }
+
+    .fa-heart,
+    .fa-plus,
+    .fa-arrow-down{
+        font-size: 1.3rem;
+        background-color: rgb(184, 178, 178);
+        padding: 5px;
+        width: 40px;
+        text-align: center;
+        border-radius: 4px;
+    }
+
+    .card-container-icon{
+       position: absolute;
+       top: 0px;
+       left: 0px;
+       width: 100%;
+       padding: 1rem;
+       display: flex;
+       justify-content: end;
+       column-gap: 10px;
+       visibility: hidden;
+    }
+
+    .card-container-details{
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        padding: 1.7rem;
+        display: flex;
+        justify-content: space-between;
+        visibility: hidden;
+        cursor: pointer;
+
+        .card-container-details-info{
+            display: flex;
+            column-gap: 10px;
+            line-height: 18px;
+
+            & img{
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                margin: 0px 0px 8px 10px;
+            }
+            & h3{
+                color: rgb(197, 197, 197);
+                &:hover{
+                    color: white;
+                }
+            }
+        }
+
+        .card-container-details-info-pro-icon{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            column-gap: 5px;
+
+            & p{
+                color: rgb(228, 222, 222);
+
+                &:hover{
+                    color: white;
+                }
+            }
+
+            .fa-check{
+                background-color: rgb(226, 226, 226);
+                border-radius: 50%;
+                padding: 2px;
+                text-align: center;
+                
+                &:hover{
+                    background-color: white;
+                }
+            }
+        }
+    }
+}
