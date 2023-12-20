@@ -1,3 +1,11 @@
+:root {
+    --font-size: 6.5%;
+    --border: 0.5px solid rgb(216, 211, 211);
+    --radius: 5px;
+
+}
+
+
 * {
     padding: 0px;
     margin: 0px;
@@ -6,4 +14,62 @@
 
 body {
     font-family: "Inter", sans-serif;
+    margin: 50px 80px;
+}
+
+.popular-section {
+    border: var(--border);
+    padding: 40px;
+
+    & h2 {
+        font-size: 1.5rem;
+    }
+
+    .popular-lists {
+        margin-top: 20px;
+
+        .popular-list-one {
+            .list-one-card {
+                .list-one-card-img {
+                    height: 150px;
+                    width: 250px;
+                }
+
+                .list-one-card-info {
+                    .list-one-card-info-detail {
+                        width: 250px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        .list-one-card-info-detail-graph {
+                            display: flex;
+                            align-items: center;
+
+                            & p {
+                                font-size: 0.8rem;
+                            }
+                        }
+
+                        .list-one-card-info-detail-rating {
+                            height: 20px;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            border: var(--border);
+                            border-radius: var(--radius);
+                            padding: 0px 3px;
+
+                            & p {
+                                font-size: calc(var(--font-size)- 0.5rem);
+                            }
+                        }
+
+                    }
+
+                }
+
+            }
+        }
+    }
 }
