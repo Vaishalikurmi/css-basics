@@ -3,3 +3,21 @@
     padding: 0px;
     box-sizing: border-box;
 }
+
+.box {
+    width: 250px;
+    height: 400px;
+    background-color: gray;
+
+
+}
+
+.img-box {
+    background-color: red;
+}
+
+& img {
+    max-width: 250px;
+    height: auto;
+    object-fit: contain;
+}
