@@ -1,0 +1,64 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 65.5%;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+.box-container {
+    width: 200px;
+    height: 200px;
+    background-color: gray;
+    margin: 90px auto;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 200px;
+    transform-origin: left top;
+}
+
+.box {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 90px;
+    right: 90px;
+}
+
+.box:nth-child(even) {
+    background-color: yellow;
+}
+
+.box:nth-child(odd) {
+    background-color: blue;
+}
+
+.box-1 {
+    transform: translateZ(120px);
+    -webkit-transform: translateZ(120px);
+    -moz-transform: translateZ(120px);
+    -ms-transform: translateZ(120px);
+    -o-transform: translateZ(120px);
+}
+
+.box-2 {
+    transform: rotateY(90deg);
+    -webkit-transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    -o-transform: rotateY(90deg);
+}
+
+.box-3 {
+    transform: rotateX(90deg);
+    -webkit-transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    -ms-transform: rotateX(90deg);
+    -o-transform: rotateX(90deg);
+}
