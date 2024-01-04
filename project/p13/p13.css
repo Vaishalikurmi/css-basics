@@ -13,52 +13,47 @@ body {
 }
 
 .box-container {
-    width: 200px;
+    width: 300px;
     height: 200px;
-    background-color: gray;
     margin: 90px auto;
     position: relative;
-    transform-style: preserve-3d;
+    background-color: gray;
     perspective: 200px;
-    transform-origin: left top;
 }
 
 .box {
-    height: 30px;
-    width: 30px;
+    width: 300px;
+    height: 200px;
     position: absolute;
-    top: 90px;
-    right: 90px;
-}
+    top: 0;
 
-.box:nth-child(even) {
-    background-color: yellow;
-}
-
-.box:nth-child(odd) {
-    background-color: blue;
 }
 
 .box-1 {
-    transform: translateZ(120px);
-    -webkit-transform: translateZ(120px);
-    -moz-transform: translateZ(120px);
-    -ms-transform: translateZ(120px);
-    -o-transform: translateZ(120px);
+    background-color: gary;
+}
+
+& h2 {
+    padding: 90px 0;
+    text-align: center;
 }
 
 .box-2 {
-    transform: rotateY(90deg);
-    -webkit-transform: rotateY(90deg);
-    -moz-transform: rotateY(90deg);
-    -ms-transform: rotateY(90deg);
-    -o-transform: rotateY(90deg);
-}
+    background-color: brown;
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 2s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
 
-.box-3 {
-    transform: rotateX(90deg);
-    -webkit-transform: rotateX(90deg);
-    -moz-transform: rotateX(90deg);
-    -ms-transform: rotateX(90deg);
-    -o-transform: rotateX(90deg);
+    &:hover {
+        color: white;
+        /* background-color: white; */
+        transform: translateY(300px);
+        -webkit-transform: translateY(300px);
+        -moz-transform: translateY(300px);
+        -ms-transform: translateY(300px);
+        -o-transform: translateY(300px);
+    }
+
 }
