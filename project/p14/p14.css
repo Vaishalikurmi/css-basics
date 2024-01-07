@@ -33,35 +33,34 @@ body {
     background: linear-gradient(to bottom, #e66465, #4b55c4);
     margin: 100px auto;
     border-radius: 50%;
+    position: relative;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    position: relative;
-    transform-style: preserve-3d;
-    perspective: 300px;
 }
 
-.circle .child::after {
-    content: "";
+.circle .child::before {
+    content: " ";
     position: absolute;
     top: 0;
     width: 0.1rem;
     height: 21.9rem;
     background: linear-gradient(rgb(241, 241, 238), rgb(255, 255, 255));
     translate: 170px 0;
-    animation: rotate 10s ease infinite alternate;
-    -webkit-animation: rotate 10s ease infinite alternate;
+    animation: rotattion 10s ease infinite alternate;
+    -webkit-animation: rotattion 10s ease infinite alternate;
 }
 
 
-@keyframes rotate {
+
+@keyframes rotation {
     0% {
         rotate: 0deg;
     }
 
     100% {
-        rorate: -360deg;
+        rorate: 360deg;
     }
 }
 
