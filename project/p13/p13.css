@@ -32,6 +32,8 @@ body {
     align-items: center;
     backface-visibility: visible;
     -webkit-backface-visibility: visible;
+    animation: rotation 2s ease alternate;
+    -webkit-animation: rotation 2s ease alternate;
 }
 
 .dice-1 {
@@ -86,4 +88,14 @@ body {
     -ms-transform: rotateX(90deg) translateZ(50px);
     -o-transform: rotateX(90deg) translateZ(50px);
     background-color: rgb(68, 68, 161);
+}
+
+@keyframes rotation {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
 }
