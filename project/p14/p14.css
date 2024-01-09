@@ -60,7 +60,8 @@ body {
     }
 
     100% {
-        rorate: 360deg;
+        translate: 100px 100px;
+        rorate: 180deg;
     }
 }
 

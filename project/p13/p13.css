@@ -96,6 +96,7 @@ body {
     }
 
     100% {
+        translate: 100px 100px;
         rotate: 360deg;
     }
 }
