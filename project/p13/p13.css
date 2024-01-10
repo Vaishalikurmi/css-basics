@@ -32,8 +32,8 @@ body {
     align-items: center;
     backface-visibility: visible;
     -webkit-backface-visibility: visible;
-    animation: rotation 2s ease alternate;
-    -webkit-animation: rotation 2s ease alternate;
+    animation: rotation 2s ease 2 alternate;
+    -webkit-animation: rotation 2s ease 2 alternate;
 }
 
 .dice-1 {
@@ -97,6 +97,6 @@ body {
 
     100% {
         translate: 100px 100px;
-        rotate: 360deg;
+        rotate: 160deg;
     }
 }
