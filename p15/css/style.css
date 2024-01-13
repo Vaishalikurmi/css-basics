@@ -1,0 +1,179 @@
+/* ============================================================
+    variable/theme rules
+============================================================  */
+
+:root {
+    --main-color: #0062ff;
+    --supporting-color: #ebf3fe;
+    --font-color: #424242;
+    --bg-color: #f7fcff;
+    --heading-color: #000a19;
+    --para-color: #504e4d;
+    --test: #070101;
+    --white-color: #ffffff;
+    --footer-bg-color: #040d12;
+    --hero-heading-color: #003b99;
+    --btn-hover-bg-color: #003b99;
+    --btn-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+/* ============================================================
+    base rules
+============================================================  */
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Poppins", sans-serif;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+p, li, a {
+    font-family: "Urbanist", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    color: var(--para-color);
+    font-size: 1.55rem;
+    line-height: 1.5;
+}
+
+
+/* ============================================================
+    layout rules
+============================================================  */
+.container {
+    padding: 2rem 6rem;
+    margin: 0 auto;
+    max-width: 1300px;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid-two--col {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+/* ============================================================
+    module rules
+============================================================  */
+
+.btn {
+    padding: 1rem 2rem;
+    background-color: var(--main-color);
+    border-radius: 1rem;
+    color: white;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+
+/* ============================================================
+    starting header css
+============================================================  */
+.navi-section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .web-logo img {
+    max-width: 90%;
+    height: auto;
+}
+
+.container .nav-list-detail ul {
+    display: flex;
+    gap: 1.5rem;
+
+    & li a {
+        position: relative;
+        font-weight: 700;
+
+        &::after {
+            content: " ";
+            position: absolute;
+            bottom: 0;
+            left: -0.1rem;
+            width: 0%;
+            border-bottom: 0.2rem solid var(--main-color);
+            transition: all 0.5s ease;
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -ms-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+        }
+    }
+
+    & li a:hover::after {
+        width: 100%;
+    }
+}
+
+
+
+/* ============================================================
+      ending <hero section > css
+    ============================================================  */
+
+main {
+    background-color: #003b99;
+
+    & .container {
+        align-items: center;
+
+        & .hero-details {
+            & .hero-span {
+                text-transform: capitalize;
+                letter-spacing: 0.2rem;
+                word-spacing: 0.5rem;
+            }
+
+            & h1 {
+                font-size: 4rem;
+            }
+
+            & .hero-para {
+                padding: 2rem 0 4rem 0;
+            }
+        }
+
+        & figure {
+            display: flex;
+            align-items: center;
+
+            & img {
+                max-width: 80%;
+                height: auto;
+                transform: scaleX(-1)
+            }
+        }
+    }
+}
+
+
+/* ============================================================
+      ending <hero section > css
+    ============================================================ */
