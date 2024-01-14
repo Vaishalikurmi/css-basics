@@ -55,6 +55,14 @@ p, li, a {
     line-height: 1.5;
 }
 
+.section-common-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.section-common-subheading {
+    margin: 1rem 0 0 0;
+}
 
 /* ============================================================
     layout rules
@@ -71,6 +79,10 @@ p, li, a {
 
 .grid-two--col {
     grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-four--col {
+    grid-template-columns: repeat(4, 1fr);
 }
 
 
@@ -139,7 +151,34 @@ p, li, a {
     ============================================================  */
 
 main {
-    background-color: #003b99;
+    position: relative;
+    background-image: linear-gradient(to top right,
+            #3d86fa,
+            #4484fb,
+            #679eff,
+            #b3d2ff,
+            #ebf3fe);
+
+    & .custom-shape-divider-bottom-1704435580 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+    }
+
+    & .custom-shape-divider-bottom-1704435580 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 60px;
+    }
+
+    & .custom-shape-divider-bottom-1704435580 .shape-fill {
+        fill: #ffffff;
+    }
 
     & .container {
         align-items: center;
@@ -157,6 +196,7 @@ main {
 
             & .hero-para {
                 padding: 2rem 0 4rem 0;
+                color: white;
             }
         }
 
@@ -173,7 +213,32 @@ main {
     }
 }
 
+/* =========================== about section ===================== */
 
-/* ============================================================
-      ending <hero section > css
-    ============================================================ */
+.about-section {
+    & .about-card {
+        & img {
+            width: 8rem;
+            height: 8rem;
+            background-color: var(--supporting-color);
+            border-radius: 50%;
+            transition: all 0.3s linear;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            -webkit-transition: all 0.3s linear;
+            -moz-transition: all 0.3s linear;
+            -ms-transition: all 0.3s linear;
+            -o-transition: all 0.3s linear;
+
+            &:hover {
+                background-color: var(--hero-heading-color);
+                cursor: pointer;
+                rotate: 360deg;
+            }
+        }
+
+
+    }
+}
