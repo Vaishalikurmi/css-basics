@@ -38,6 +38,11 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
+button {
+    outline: none;
+    border: none;
+}
+
 li {
     list-style-type: none;
 }
@@ -80,21 +85,24 @@ p, li, a {
     grid-template-columns: repeat(4, 1fr);
 }
 
+/* ============================================================
+    state rules
+============================================================  */
+.btn {
+    display: inline-block;
+    color: var(--white-color);
+    padding: 1.2rem 3.2rem;
+    background-color: var(--main-color);
+    border-radius: 0.6rem;
+    -webkit-border-radius: 0.6rem;
+    -moz-border-radius: 0.6rem;
+    -ms-border-radius: 0.6rem;
+    -o-border-radius: 0.6rem;
+}
 
 /* ============================================================
     module rules
 ============================================================  */
-
-.btn {
-    padding: 1rem 2rem;
-    background-color: var(--main-color);
-    border-radius: 1rem;
-    color: white;
-    -webkit-border-radius: 1rem;
-    -moz-border-radius: 1rem;
-    -ms-border-radius: 1rem;
-    -o-border-radius: 1rem;
-}
 
 .section-common-heading {
     font-size: 2.6rem;
@@ -111,10 +119,11 @@ p, li, a {
     margin: 1rem 0 0 0;
 }
 
-.fa-solid {
-    padding: 1rem;
-    font-size: 4rem;
+.fa-solid, .fa-brands {
+    padding: 2rem;
+    font-size: 3rem;
     background-color: var(--supporting-color);
+    color: var(--main-color);
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -122,8 +131,34 @@ p, li, a {
     -o-border-radius: 50%;
 }
 
-:is(.explore-section) {
+:is(.explore-section, .why-choose-section) {
     margin: 10rem 0;
+}
+
+:is(.why-choose-card) {
+    & span {
+        color: var(--btn-hover-bg-color);
+        font-weight: 700;
+        padding: 1rem 2rem;
+        font-size: 2rem;
+        background-color: var(--supporting-color);
+        border-radius: 50px;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        -ms-border-radius: 50px;
+        -o-border-radius: 50px
+    }
+}
+
+:is(.why-choose-left, .why-choose-right) .why-choose-card {
+    &:nth-child(2) {
+        margin: 4rem 0rem;
+    }
+}
+
+:is(.grid) {
+    margin-top: 4rem;
+    gap: 3rem;
 }
 
 /* ============================================================
@@ -279,16 +314,127 @@ main {
 
 .explore-section {
 
-    .grid {
-        gap: 3rem;
-    }
-
     & .container .explore-card {
         text-align: center;
+        padding: 1rem;
 
         &:hover {
             box-shadow: var(--btn-box-shadow);
             cursor: pointer;
         }
+    }
+}
+
+/* ============================================================
+    starting <why choose section > css
+============================================================  */
+.why-choose-section {
+    & .why-choose-left .why-choose-card {
+        text-align: right;
+    }
+
+    & .why-choose-center {
+        display: flex;
+        align-items: center;
+
+        figure img {
+            max-width: 100%;
+            height: auto;
+            background-color: var(--supporting-color);
+            padding: 1rem 0rem;
+            border: 0.4rem solid var(--supporting-color);
+            border-radius: 50%;
+            transition: all 1s linear;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            -webkit-transition: all 1s linear;
+            -moz-transition: all 1s linear;
+            -ms-transition: all 1s linear;
+            -o-transition: all 1s linear;
+
+            &:hover {
+                background-color: var(--main-color);
+            }
+        }
+    }
+}
+
+/* ============================================================
+    startiing <home contact section> css
+============================================================  */
+
+.contact-home-section .container {
+    width: 100rem;
+    box-shadow: var(--btn-box-shadow);
+    margin-bottom: 4rem;
+    padding: 4rem;
+
+    .grid {
+        justify-items: center;
+        align-items: center;
+    }
+
+    & .contact-home-content {
+        & h2 {
+            font-size: 2rem;
+        }
+
+        & p {
+            margin: 1.5rem 0;
+        }
+
+        & button i {
+            font-size: 2.6rem;
+            padding: 0;
+            color: var(--main-color);
+            background-color: var(--white-color);
+        }
+    }
+
+    .contact-home-image img {
+        max-width: 80%;
+        height: auto;
+    }
+}
+
+
+/* ============================================================
+    startiing < footer section> css
+============================================================  */
+
+footer * {
+    color: var(--white-color);
+}
+
+footer {
+    background-color: var(--footer-bg-color);
+    padding: 5rem;
+
+    .grid {
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    & .footer-detail {
+        & p {
+            margin: 1.5rem 0;
+        }
+
+        & .footer-detail-list {
+            display: flex;
+            gap: 2rem;
+
+            .fa-brands {
+                padding: 1rem;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .footer-list {
+        color: white;
+        text-align: center;
     }
 }
