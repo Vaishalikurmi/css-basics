@@ -1,34 +1,92 @@
 /* =======================
 theme rules
 ======================= */
+
+@font-face {
+    font-family: _font-family;
+    src: url(../../font/font-family/CeraRoundPro-Bold.otf);
+    display: swap;
+    font-weight: 600;
+    line-gap-override: 0%;
+}
+
+@font-face {
+    font-family: _font-family;
+    src: url(../../font/font-family/CeraRoundPro-Light.otf);
+    display: swap;
+    font-weight: 300;
+    line-gap-override: 0%;
+}
+
+@font-face {
+    font-family: _font-family;
+    src: url(../../font/font-family/CeraRoundPro-Medium.otf);
+    display: swap;
+    font-weight: 500;
+    line-gap-override: 0%;
+}
+
+@font-face {
+    font-family: _font-family;
+    src: url(../../font/font-family/CeraRoundPro-Regular.otf);
+    display: swap;
+    font-weight: 400;
+    line-gap-override: 0%;
+}
+
+@font-face {
+    font-family: _fall-back-family;
+    src: url("Arial");
+    display: swap;
+    line-gap-override: 0%;
+    ascent-override: 110%;
+    descent-override: 90%;
+}
+
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: _font-family, _fall-back-family;
 }
 
 :root {
     --heading-main-clr: #183153;
-
+    --link-color: #616D8A;
+    --link-hover-clr: #15156faf;
     /* sizes */
     --size-base: 1rem;
     /* 10px */
 
-    /* button-color */
-    --btn-main: #183153;
+
 }
 
 /* =======================
 base rules
 ======================= */
+body {
+    font-feature-settings: "ss01"on;
+    -webkit-font-feature-settings: "ss01"on;
+    -moz-font-feature-settings: "ss01"on;
+}
 
 html {
     font-size: 62.5%;
-    ;
 }
 
 :is(h1, h2, h3, h4, h5, h6, p) {
     color: var(--heading-main-clr);
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+ul {
+    list-style-type: none;
+    width: 100%;
 }
 
 h2 {
@@ -42,11 +100,100 @@ h1 {
 /* =======================
 layout rules
 ======================= */
-
+.container {
+    padding: 4rem 2rem;
+    margin: 0 auto;
+    max-width: 1090px;
+}
 
 /* =======================
 module rules
 ======================= */
 .btn {
     color: var(--heading-main-clr);
+}
+
+/* =======================
+header section 
+======================= */
+
+.hearder-section {
+    height: 7rem;
+
+    & .fa-bars,
+    .fa-xmark,
+    .nav-menu {
+        display: none;
+    }
+
+    & .container {
+        display: flex;
+        justify-content: space-between;
+        gap: 5rem;
+        padding: 2rem 0;
+        /* padding-inline: ; */
+    }
+
+    & .nav-wrapper {
+        display: flex;
+        gap: 2rem;
+    }
+
+    & .nav-wrapper nav ul {
+        display: flex;
+        gap: 4rem;
+        margin-left: 3rem;
+    }
+
+    & nav .nav-link {
+        color: var(--link-color);
+        font-size: 1.6rem;
+        transition: all 0.3 linear;
+        -webkit-transition: all 0.3 linear;
+        -moz-transition: all 0.3 linear;
+        -ms-transition: all 0.3 linear;
+        -o-transition: all 0.3 linear;
+
+        &:hover {
+            color: var(--link-hover-clr);
+        }
+    }
+
+    & nav.container {
+        padding: 1em 0rem;
+    }
+
+    .nav-menu .nav-link {
+        display: block;
+        border-bottom: 0.1px solid var(--link-color);
+        padding: 1rem 0;
+    }
+
+    & .fa-xl {
+        height: 2.4rem;
+        width: 2.4rem;
+        color: var(--link-clr);
+    }
+}
+
+@media (width<=768) {
+    .hearder-section {
+        & .nav-wrapper nav ul {
+            display: flex;
+            gap: 3rem;
+        }
+    }
+}
+
+
+@media (width<=600) {
+    .hearder-section {
+        & .container #bars {
+            display: visible;
+        }
+
+        .nav-wrapper nav ul .nav-link {
+            display: none;
+        }
+    }
 }
