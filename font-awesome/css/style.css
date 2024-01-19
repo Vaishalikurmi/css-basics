@@ -36,11 +36,11 @@ theme rules
 
 @font-face {
     font-family: _fall-back-family;
-    src: url("Arial");
+    src: local("Arial");
     display: swap;
     line-gap-override: 0%;
     ascent-override: 110%;
-    descent-override: 90%;
+    descent-override: 30%;
 }
 
 
@@ -54,7 +54,7 @@ theme rules
 :root {
     --heading-main-clr: #183153;
     --link-color: #616D8A;
-    --link-hover-clr: #15156faf;
+    --link-hover-clr: #156fbf;
     /* sizes */
     --size-base: 1rem;
     /* 10px */
@@ -117,42 +117,40 @@ module rules
 header section 
 ======================= */
 
-.hearder-section {
-    height: 7rem;
-
-    & .fa-bars,
-    .fa-xmark,
-    .nav-menu {
-        display: none;
-    }
+.header-section {
+    height: 7.6rem;
 
     & .container {
         display: flex;
         justify-content: space-between;
-        gap: 5rem;
-        padding: 2rem 0;
-        /* padding-inline: ; */
+        align-items: center;
+        padding: 2rem 2rem;
+    }
+
+    & .fa-bars,
+    .fa-xmark {
+        display: none;
     }
 
     & .nav-wrapper {
         display: flex;
-        gap: 2rem;
+        align-items: center;
+        gap: 8rem;
     }
 
-    & .nav-wrapper nav ul {
+    & .nav-wrapper .navbar ul {
         display: flex;
         gap: 4rem;
-        margin-left: 3rem;
     }
 
-    & nav .nav-link {
+    & :is(.navbar, .nav-menu) .nav-link {
         color: var(--link-color);
-        font-size: 1.6rem;
-        transition: all 0.3 linear;
-        -webkit-transition: all 0.3 linear;
-        -moz-transition: all 0.3 linear;
-        -ms-transition: all 0.3 linear;
-        -o-transition: all 0.3 linear;
+        font-size: 1.55rem;
+        transition: all 0.2s linear;
+        -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+        -ms-transition: all 0.2s linear;
+        -o-transition: all 0.2s linear;
 
         &:hover {
             color: var(--link-hover-clr);
@@ -160,39 +158,45 @@ header section
     }
 
     & nav.container {
-        padding: 1em 0rem;
+        padding: 1rem 2rem 0rem;
     }
 
-    .nav-menu .nav-link {
-        display: block;
-        border-bottom: 0.1px solid var(--link-color);
+    & .nav-menu {
+        display: none;
+    }
+
+    & .nav-menu .nav-item {
+        border-bottom: 0.05rem solid var(--link-color);
+    }
+
+    & .nav-menu .nav-link {
         padding: 1rem 0;
+        text-indent: 0.4rem;
     }
 
     & .fa-xl {
-        height: 2.4rem;
-        width: 2.4rem;
-        color: var(--link-clr);
+        height: 2.2rem;
+        width: 2.2rem;
+        color: var(--link-color);
+        cursor: pointer;
     }
 }
 
-@media (width<=768) {
-    .hearder-section {
-        & .nav-wrapper nav ul {
-            display: flex;
-            gap: 3rem;
+@media (width <=768px) {
+    .header-section {
+        & .nav-wrapper .navbar ul {
+            gap: 2rem;
         }
     }
 }
 
-
-@media (width<=600) {
-    .hearder-section {
-        & .container #bars {
-            display: visible;
+@media (width <=600px) {
+    .header-section {
+        & .fa-bars {
+            display: block;
         }
 
-        .nav-wrapper nav ul .nav-link {
+        .navbar {
             display: none;
         }
     }
