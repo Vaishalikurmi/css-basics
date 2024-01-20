@@ -52,12 +52,45 @@ theme rules
 }
 
 :root {
+    --main-clr: #183153;
     --heading-main-clr: #183153;
     --link-color: #616D8A;
     --link-hover-clr: #156fbf;
+    --white: white;
+    --black: black;
     /* sizes */
     --size-base: 1rem;
     /* 10px */
+
+    /* button */
+    --btn-main-bg: #b197fc;
+    --btn-primary-bg: #ffd43b;
+    --bts-secondary-bg: #ffd43b;
+    --bts-tertiary-bg: #74c0fc;
+
+    /* background-color */
+    --bg-main: #f0f1f3;
+
+    /* yellow color */
+    --yellow-bold: #fab005;
+    --yellow-light: #ffd43b;
+
+    /* pink color */
+    --pink-light: #ef99f7;
+    --pink-bold: #9c36b5;
+
+    /* purple color */
+    --purple-light: #b197fc;
+    --purple-bold: #6741d9;
+
+    /* geen color */
+    --green-light: #63e6be;
+    --greaan-bold: #0ca67a;
+
+    /* sky-blue color */
+    --sky-blue-light: #74c0fc;
+    --sky-blue-bold: #146ebe;
+
 
 
 }
@@ -76,7 +109,13 @@ html {
 }
 
 :is(h1, h2, h3, h4, h5, h6, p) {
-    color: var(--heading-main-clr);
+    color: var(---main-clr);
+}
+
+a, p, li, span {
+    line-height: 1.56;
+    letter-spacing: 0.02rem;
+    font-size: 1.2rem;
 }
 
 a {
@@ -94,7 +133,30 @@ h2 {
 }
 
 h1 {
-    font-size: 4.8rem;
+    font-size: 4rem;
+}
+
+:is(button, .btn) {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    /* display: inline-block; */
+    color: var(--heading-main-clr);
+    padding: 1rem 2.4rem;
+    border-radius: 0.8rem;
+    -webkit-border-radius: 0.8rem;
+    -moz-border-radius: 0.8rem;
+    -ms-border-radius: 0.8rem;
+    -o-border-radius: 0.8rem;
+    box-shadow: 0 0.4rem var(--main-clr);
+    border-inline: 0.1rem solid var(--btn-main-bg);
+    border-top: 0.1rem solid var(--btn-main-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.6rem;
+    gap: 1.6rem;
 }
 
 /* =======================
@@ -109,10 +171,27 @@ layout rules
 /* =======================
 module rules
 ======================= */
-.btn {
-    color: var(--heading-main-clr);
+.btn-main {
+    background-color: var(--white);
 }
 
+.btn-primary {
+    background-color: var(--purple-light);
+}
+
+.btn-secondary {
+    background-color: var(--yellow-light);
+}
+
+.btn-tertiary {
+    background-color: var(--sky-blue-light);
+}
+
+& .hero-subheading {
+    font-size: 1.5rem;
+}
+
+.bedge
 /* =======================
 header section 
 ======================= */
@@ -141,6 +220,7 @@ header section
     & .nav-wrapper .navbar ul {
         display: flex;
         gap: 4rem;
+
     }
 
     & :is(.navbar, .nav-menu) .nav-link {
@@ -159,10 +239,6 @@ header section
 
     & nav.container {
         padding: 1rem 2rem 0rem;
-    }
-
-    & .nav-menu {
-        display: none;
     }
 
     & .nav-menu .nav-item {
@@ -198,6 +274,36 @@ header section
 
         .navbar {
             display: none;
+            padding: 0;
         }
+    }
+}
+
+/* =======================
+hero section 
+======================= */
+.hero-section {
+    height: 100vw;
+    background: url("https://img.fortawesome.com/1ce05b4b/hero-icon-bg.svg") no-repeat -79rem 2rem,
+        url("https://img.fortawesome.com/1ce05b4b/hero-icon-bg.svg") no-repeat 117rem 2rem;
+
+    & .container {
+        width: 60rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    & .btn-group {
+        display: flex;
+        gap: 2rem;
+    }
+
+    & .btn-group img {
+        max-width: 2.2rem;
+        height: auto;
     }
 }
