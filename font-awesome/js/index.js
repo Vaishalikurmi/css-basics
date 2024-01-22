@@ -6,7 +6,6 @@ menuBar.addEventListener("click", function () {
   mobileMenu.style.display = "block";
   closeMenu.style.display = "block";
   menuBar.style.display = "none";
-  mobileMenu.classList.toggle("menu-show");
 });
 
 closeMenu.addEventListener("click", function () {
