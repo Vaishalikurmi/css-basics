@@ -58,39 +58,36 @@ theme rules
     --link-hover-clr: #156fbf;
     --white: white;
     --black: black;
-    /* sizes */
+    /*sizes*/
     --size-base: 1rem;
-    /* 10px */
-
-    /* button */
+    /*10px*/
+    /*button*/
     --btn-main-bg: #b197fc;
     --btn-primary-bg: #ffd43b;
     --bts-secondary-bg: #ffd43b;
     --bts-tertiary-bg: #74c0fc;
-
-    /* background-color */
+    /*background-color*/
     --bg-main: #f0f1f3;
-
-    /* yellow color */
+    /*yellowcolor*/
     --yellow-bold: #fab005;
     --yellow-light: #ffd43b;
-
-    /* pink color */
+    /*pinkcolor*/
     --pink-light: #ef99f7;
     --pink-bold: #9c36b5;
-
-    /* purple color */
+    /*purplecolor*/
     --purple-light: #b197fc;
     --purple-bold: #6741d9;
-
-    /* geen color */
+    /*geencolor*/
     --green-light: #63e6be;
     --greaan-bold: #0ca67a;
-
-    /* sky-blue color */
+    /*sky-bluecolor*/
     --sky-blue-light: #74c0fc;
     --sky-blue-bold: #146ebe;
 
+
+    /* border-radius: ; */
+    --border-radius-lg: calc(var(var(--size-base))- 0.2rem)
+        /*9px*/
 }
 
 /* =======================
@@ -106,7 +103,7 @@ html {
     font-size: 62.5%;
 }
 
-:is(h1, h2, h3, h4, h5, h6, p) {
+:is(h1, h2, h3, h4, h5, h6, p, span) {
     color: var(---main-clr);
 }
 
@@ -138,14 +135,15 @@ h1 {
     cursor: pointer;
     border: none;
     outline: none;
-    /* display: inline-block; */
+    /*display: inline-block;
+    */
     color: var(--heading-main-clr);
-    padding: 1rem 2.4rem;
-    border-radius: 0.8rem;
-    -webkit-border-radius: 0.8rem;
-    -moz-border-radius: 0.8rem;
-    -ms-border-radius: 0.8rem;
-    -o-border-radius: 0.8rem;
+    padding: 0.7rem 2.4rem;
+    border-radius: var(--border-radius-lg);
+    -webkit-border-radius: var(--border-radius-lg);
+    -moz-border-radius: var(--border-radius-lg);
+    -ms-border-radius: var(--border-radius-lg);
+    -o-border-radius: var(--border-radius-lg);
     box-shadow: 0 0.4rem var(--main-clr);
     border-inline: 0.1rem solid var(--btn-main-bg);
     border-top: 0.1rem solid var(--btn-main-bg);
@@ -164,6 +162,15 @@ layout rules
     padding: 4rem 2rem;
     margin: 0 auto;
     max-width: 1090px;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid-three-cols {
+    grid-template-columns: repeat(3, 1fr);
+
 }
 
 /* =======================
@@ -187,6 +194,38 @@ module rules
 
 & .hero-subheading {
     font-size: 1.5rem;
+}
+
+& .card {
+    border-radius: var(--border-radius-lg);
+    -webkit-border-radius: var(--border-radius-lg);
+    -moz-border-radius: var(--border-radius-lg);
+    -ms-border-radius: var(--border-radius-lg);
+    -o-border-radius: var(--border-radius-lg);
+}
+
+.badge {
+    font-size: 1.2rem;
+    border-radius: var(--border-radius-lg);
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    -webkit-border-radius: var(--border-radius-lg);
+    -moz-border-radius: var(--border-radius-lg);
+    -ms-border-radius: var(--border-radius-lg);
+    -o-border-radius: var(--border-radius-lg);
+}
+
+.badge-light-purple {
+    background-color: var(--purple-light);
+}
+
+.badge-light-green {
+    background-color: var(--green-light);
+}
+
+.badge-dark-blue {
+    background-color: var(--main-clr);
+    color: white;
 }
 
 /* =======================
@@ -265,11 +304,8 @@ header section
 hero section 
 ======================= */
 .hero-section {
-    height: 100vw;
-    background: url("https://img.fortawesome.com/1ce05b4b/hero-icon-bg.svg") no-repeat -79rem 2rem,
-        url("https://img.fortawesome.com/1ce05b4b/hero-icon-bg.svg") no-repeat 117rem 2rem;
 
-    & .container {
+    &>.container {
         width: 60rem;
         text-align: center;
         display: flex;
@@ -288,6 +324,112 @@ hero section
         max-width: 2.2rem;
         height: auto;
     }
+
+    & .announcing-subsetting {
+
+        background-color: var(--bg-main);
+
+        & .grid {
+            gap: 4rem;
+        }
+
+        & .grid-three-cols {
+            grid-template-columns: 2fr, repeat(2, 1fr);
+            grid-template-rows: minmax(150px, min-content);
+        }
+
+        & .card {
+            position: relative;
+
+        }
+
+        & .badge {
+            position: absolute;
+            right: 4rem;
+            top: -1.4rem;
+            border-radius: var(--border-radius-lg);
+            -webkit-border-radius: var(--border-radius-lg);
+            -moz-border-radius: var(--border-radius-lg);
+            -ms-border-radius: var(--border-radius-lg);
+            -o-border-radius: var(--border-radius-lg);
+        }
+
+        & .card:nth-child(1) {
+            padding: 1rem 1rem;
+            border: 0.07rem solid var(--purple-bold);
+
+            & p {
+                font-size: 1.2rem;
+                padding: 1rem 0;
+            }
+
+            & .subsetting-heading {
+                font-size: 1.2rem;
+            }
+
+            & .subsetting-link {
+                display: flex;
+                gap: 1rem;
+            }
+
+            .subsetting-link a {
+                color: var(--purple-bold);
+                font-size: 1.2rem;
+                text-decoration: dotted;
+                transition: all 0.3s linear;
+                -webkit-transition: all 0.3s linear;
+                -moz-transition: all 0.3s linear;
+                -ms-transition: all 0.3s linear;
+                -o-transition: all 0.3s linear;
+
+                &:hover {
+                    color: var(--purple-light);
+                }
+            }
+        }
+
+        & .card:nth-child(2) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 2rem;
+
+            & .card-header {
+                width: 180px;
+                height: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                background-color: var(--pink-light);
+
+                & img:nth-child(1) {
+                    max-width: 2.3rem;
+                    height: auto;
+                }
+
+                & img:nth-child(2) {
+                    max-width: 2rem;
+                    height: auto;
+                }
+
+                & img:nth-child(3) {
+                    max-width: 2.3rem;
+                    height: auto;
+                }
+
+            }
+
+            & .card-footer {
+                text-align: center;
+                font-size: 1.7em;
+            }
+        }
+
+    }
+
 }
 
 
