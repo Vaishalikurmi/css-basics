@@ -56,7 +56,7 @@ theme rules
     --heading-main-clr: #183153;
     --link-color: #616D8A;
     --link-hover-clr: #156fbf;
-    --white: white;
+    --white-clr: white;
     --black: black;
     /*sizes*/
     --size-base: 1rem;
@@ -86,7 +86,7 @@ theme rules
 
 
     /* border-radius: ; */
-    --border-radius-lg: calc(var(var(--size-base))- 0.2rem)
+    --border-radius-lg: calc(var(--size-base) - 0.2rem)
         /*9px*/
 }
 
@@ -135,24 +135,26 @@ h1 {
     cursor: pointer;
     border: none;
     outline: none;
+    width: 100%;
     /*display: inline-block;
     */
     color: var(--heading-main-clr);
     padding: 0.7rem 2.4rem;
-    border-radius: var(--border-radius-lg);
-    -webkit-border-radius: var(--border-radius-lg);
-    -moz-border-radius: var(--border-radius-lg);
-    -ms-border-radius: var(--border-radius-lg);
-    -o-border-radius: var(--border-radius-lg);
     box-shadow: 0 0.4rem var(--main-clr);
     border-inline: 0.1rem solid var(--btn-main-bg);
     border-top: 0.1rem solid var(--btn-main-bg);
+    text-wrap: nowrap;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: 600;
     font-size: 1.6rem;
     gap: 1.6rem;
+    border-radius: var(--border-radius-lg);
+    -webkit-border-radius: var(--border-radius-lg);
+    -moz-border-radius: var(--border-radius-lg);
+    -ms-border-radius: var(--border-radius-lg);
+    -o-border-radius: var(--border-radius-lg);
 }
 
 /* =======================
@@ -177,7 +179,7 @@ layout rules
 module rules
 ======================= */
 .btn-main {
-    background-color: var(--white);
+    background-color: var(--white-clr);
 }
 
 .btn-primary {
@@ -205,14 +207,14 @@ module rules
 }
 
 .badge {
-    font-size: 1.2rem;
-    border-radius: var(--border-radius-lg);
-    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.9rem;
+    padding: 0.1rem 0.5rem;
     font-weight: 700;
-    -webkit-border-radius: var(--border-radius-lg);
-    -moz-border-radius: var(--border-radius-lg);
-    -ms-border-radius: var(--border-radius-lg);
-    -o-border-radius: var(--border-radius-lg);
+    -webkit-border-radius: 0.9rem;
+    -moz-border-radius: 0.9rem;
+    -ms-border-radius: 0.9rem;
+    -o-border-radius: 0.9rem;
 }
 
 .badge-light-purple {
@@ -226,6 +228,16 @@ module rules
 .badge-dark-blue {
     background-color: var(--main-clr);
     color: white;
+}
+
+@media (width<=998) {
+    html {
+        font-size: 59.5%;
+    }
+
+    h1 {
+        font-size: 4.1rem;
+    }
 }
 
 /* =======================
@@ -335,23 +347,46 @@ hero section
         }
 
         & .grid-three-cols {
-            grid-template-columns: 2fr, repeat(2, 1fr);
-            grid-template-rows: minmax(150px, min-content);
+            grid-template-columns: 2fr repeat(2, 1fr);
+            grid-template-rows: minmax(130px, min-content);
+            grid-auto-rows: minmax(130px, min-content);
         }
 
         & .card {
             position: relative;
-        }
+            background-color: var(--white-clr);
 
-        & .badge {
-            position: absolute;
-            right: 4rem;
-            top: -1.4rem;
-            border-radius: var(--border-radius-lg);
-            -webkit-border-radius: var(--border-radius-lg);
-            -moz-border-radius: var(--border-radius-lg);
-            -ms-border-radius: var(--border-radius-lg);
-            -o-border-radius: var(--border-radius-lg);
+            & .subsetting-heading {
+                font-size: 1.2rem;
+            }
+
+            & .badge {
+                position: absolute;
+                right: 3rem;
+                top: -1.4rem;
+                z-index: 3;
+            }
+
+            & .card-footer {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 30%;
+                text-align: center;
+                font-size: 1.9em;
+            }
+
+            & .card-header {
+                width: 100%;
+                height: calc(100% - 30%);
+                border-radius: var(--border-radius-lg);
+                -webkit-border-radius: var(--border-radius-lg);
+                -moz-border-radius: var(--border-radius-lg);
+                -ms-border-radius: var(--border-radius-lg);
+                -o-border-radius: var(--border-radius-lg);
+            }
+
+
         }
 
         & .card:nth-child(1) {
@@ -361,10 +396,6 @@ hero section
             & p {
                 font-size: 1.2rem;
                 padding: 1rem 0;
-            }
-
-            & .subsetting-heading {
-                font-size: 1.2rem;
             }
 
             & .subsetting-link {
@@ -389,17 +420,52 @@ hero section
         }
 
         & .card:nth-child(2) {
+            & .card-header {
+                overflow: hidden;
+                position: relative;
+                background-color: var(--main-clr);
+            }
+
+            & .card-header .group-1 {
+                position: absolute;
+                top: -1rem;
+                column-gap: 2rem;
+
+            }
+
+            & .card-header .icon-group {
+                display: flex;
+                flex-wrap: nowrap;
+                column-gap: 3.7rem;
+            }
+
+            & .card-header .icon-group img {
+                width: 2rem;
+                height: 2rem;
+
+            }
+
+            & .card-header .group-2 {
+                position: absolute;
+                top: 40%;
+            }
+
+            & .card-header .group-3 {
+                position: absolute;
+                bottom: -8px;
+            }
+
+
+        }
+
+        & .card:nth-child(3) {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            gap: 2rem;
 
             & .card-header {
-                width: 180px;
-                height: 100px;
                 display: flex;
-                align-items: center;
                 justify-content: center;
                 align-items: center;
                 gap: 1rem;
@@ -421,11 +487,6 @@ hero section
                 }
 
             }
-
-            & .card-footer {
-                text-align: center;
-                font-size: 1.7em;
-            }
         }
 
     }
@@ -433,12 +494,26 @@ hero section
 }
 
 
-
-
-@media (width <=768px) {
+@media (width <=778px) {
     .header-section {
         & .nav-wrapper .navbar ul {
             gap: 2rem;
+        }
+
+    }
+
+    .hero-section {
+        & .announcing-subsetting {
+            .grid-three-cols {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: minmax(100px, min-content);
+
+            }
+
+            & .card:nth-child(1) {
+                grid-area: 1/1/2/-1;
+            }
+
         }
     }
 }
@@ -460,7 +535,23 @@ hero section
     }
 
     .hero-section {
+
         background-position: -93rem 2rem,
             55rem 2rem;
+
+        & .hero-heading {
+            font-size: 3rem;
+        }
+
+        .btn-group {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        &>.container {
+            width: 100%;
+        }
+
+
     }
 }
