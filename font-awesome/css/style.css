@@ -58,28 +58,44 @@ theme rules
     --link-hover-clr: #156fbf;
     --white-clr: white;
     --black: black;
+
+    /* gray color */
+    --gray-clr-light: #c3c6d1;
+
     /*sizes*/
     --size-base: 1rem;
     /*10px*/
+
     /*button*/
     --btn-main-bg: #b197fc;
     --btn-primary-bg: #ffd43b;
     --bts-secondary-bg: #ffd43b;
     --bts-tertiary-bg: #74c0fc;
+
+
     /*background-color*/
     --bg-main: #f0f1f3;
+
     /*yellowcolor*/
     --yellow-bold: #fab005;
     --yellow-light: #ffd43b;
+
+
     /*pinkcolor*/
     --pink-light: #ef99f7;
     --pink-bold: #9c36b5;
+
+
     /*purplecolor*/
     --purple-light: #b197fc;
     --purple-bold: #6741d9;
+
+
     /*geencolor*/
     --green-light: #63e6be;
     --greaan-bold: #0ca67a;
+
+
     /*sky-bluecolor*/
     --sky-blue-light: #74c0fc;
     --sky-blue-bold: #146ebe;
@@ -104,7 +120,7 @@ html {
 }
 
 :is(h1, h2, h3, h4, h5, h6, p, span) {
-    color: var(---main-clr);
+    color: var(--main-clr);
 }
 
 a, p, li, span {
@@ -128,7 +144,7 @@ h2 {
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 4.8rem;
 }
 
 :is(button, .btn) {
@@ -153,6 +169,11 @@ h1 {
     -moz-border-radius: var(--border-radius-lg);
     -ms-border-radius: var(--border-radius-lg);
     -o-border-radius: var(--border-radius-lg);
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
 }
 
 /* =======================
@@ -162,6 +183,22 @@ layout rules
     padding: 4rem 2rem;
     margin: 0 auto;
     max-width: 1090px;
+}
+
+.header-section .container {
+    padding: 2rem 2rem;
+}
+
+.hero-section .container {
+    padding: 4rem 6rem 2rem;
+}
+
+.subsetting-info-section .container {
+    padding: 0rem 3rem 2rem;
+}
+
+.services-section .container {
+    padding: 0rem 2rem 5rem;
 }
 
 .grid {
@@ -204,7 +241,7 @@ module rules
 }
 
 .hero-subheading {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 .card {
@@ -213,6 +250,7 @@ module rules
     -moz-border-radius: var(--border-radius-lg);
     -ms-border-radius: var(--border-radius-lg);
     -o-border-radius: var(--border-radius-lg);
+
 }
 
 .badge {
@@ -247,6 +285,11 @@ module rules
     h1 {
         font-size: 4.1rem;
     }
+
+    .header-section .container {
+
+        padding: 0 7rem;
+    }
 }
 
 & .section-hash {
@@ -268,7 +311,6 @@ module rules
     }
 
     & .section-hash-subheading {
-        color: var(--yellow-bold);
         font-size: 1.5rem;
         font-weight: 700;
         text-transform: uppercase;
@@ -279,6 +321,57 @@ module rules
         visibility: visible;
     }
 }
+
+.card-tittle {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.card-para {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.card-para {
+    font-size: 1.4rem;
+}
+
+@madia (width<=600px) {
+    .header-section .container {
+        padding: 2rem 2rem 0rem;
+    }
+}
+
+/* =======================
+state rules
+======================= */
+
+.btn-main:hover {
+    background-color: var(--gray-clr-light);
+}
+
+.btn-secondary:hover {
+    background-color: var(--yellow-bold);
+}
+
+.btn-tertiary:hover {
+    background-color: var(--sky-blue-bold);
+}
+
+.btn-primary:hover {
+    background-color: var(--purple-bold);
+}
+
+.card-yellow:hover {
+    box-shadow: 0 0.3rem var(--yellow-light);
+    border: 0.1rem solid var(--yellow-light);
+}
+
+.card-pink:hover {
+    box-shadow: 0 0.3rem var(--pink-bold);
+    border: 0.1rem solid var(--pink-bold);
+}
+
 
 /* =======================
 header section 
@@ -291,7 +384,6 @@ header section
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 2rem 2rem;
     }
 
     & .fa-bars,
@@ -358,13 +450,13 @@ hero section
 .hero-section {
 
     &>.container {
-        width: 60rem;
+        width: 70rem;
         text-align: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 3rem;
+        gap: 4rem;
     }
 
     & .btn-group {
@@ -373,7 +465,7 @@ hero section
     }
 
     & .btn-group img {
-        max-width: 2.2rem;
+        max-width: 2.8rem;
         height: auto;
     }
 }
@@ -387,13 +479,12 @@ hero section
     width: 100%;
     background-color: var(--bg-main);
 
-
     & .grid {
         gap: 4rem;
     }
 
     & .grid-three-cols {
-        grid-template-columns: 2fr repeat(2, 1fr);
+        grid-template-columns: 2fr repeat(2, minmax(200px, 260px));
         grid-template-rows: minmax(130px, min-content);
         grid-auto-rows: minmax(130px, min-content);
     }
@@ -403,7 +494,7 @@ hero section
         background-color: var(--white-clr);
 
         & .subsetting-heading {
-            font-size: 1.2rem;
+            font-size: 1.6rem;
         }
 
         & .badge {
@@ -419,7 +510,7 @@ hero section
             justify-content: center;
             height: 30%;
             text-align: center;
-            font-size: 1.9em;
+            font-size: 2.2em;
         }
 
         & .card-header {
@@ -440,7 +531,7 @@ hero section
         border: 0.07rem solid var(--purple-bold);
 
         & p {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             padding: 1rem 0;
         }
 
@@ -451,7 +542,7 @@ hero section
 
         & .subsetting-link a {
             color: var(--purple-bold);
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             text-decoration: dotted;
             transition: all 0.3s linear;
             -webkit-transition: all 0.3s linear;
@@ -482,7 +573,7 @@ hero section
         & .card-header .icon-group {
             display: flex;
             flex-wrap: nowrap;
-            column-gap: 4.4rem;
+            column-gap: 4.2rem;
         }
 
         & .card-header .icon-group img {
@@ -563,6 +654,7 @@ subsetting  section
             font-size: 1.4rem;
             font-weight: 700;
             color: black;
+            text-decoration: underline;
             transition: all 0.3s linear;
             -webkit-transition: all 0.3s linear;
             -moz-transition: all 0.3s linear;
@@ -586,11 +678,7 @@ service section
     }
 
     & .grid {
-        gap: 4rem;
-    }
-
-    & .container {
-        padding: 0 2rem;
+        gap: 4rem 3rem;
     }
 
     & .section-hash {
@@ -603,6 +691,10 @@ service section
 
     & .service-detail-para {
         font-size: 1.5rem;
+    }
+
+    & .section-hash-subheading {
+        color: var(--yellow-bold);
     }
 
     & .service-form {
@@ -658,7 +750,80 @@ service section
     }
 
     & .service-img img {
-        max-width: 85%;
+        max-width: 81%;
+    }
+
+    & .service-card {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        gap: 2.5rem;
+
+        & img {
+            max-width: 2.4rem;
+            height: auto;
+        }
+
+    }
+}
+
+/* =======================
+service section 
+======================= */
+.web-brand-section {
+    background-color: var(--main-clr);
+    padding: 3rem 1rem;
+    line-height: 4;
+
+    & .web-brand-heading {
+        font-size: 1.2rem;
+        text-align: center;
+        color: var(--yellow-light);
+        letter-spacing: 0.5rem;
+    }
+
+    & .web-brand-lists {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        & img {
+            height: 2.8rem;
+            max-width: auto;
+            object-fit: contain;
+            flex-grow: 1;
+        }
+    }
+}
+
+@media (width<=992px) {
+
+    .services-section {
+        & .grid {
+            row-gap: 3rem;
+        }
+
+        & .grid-two-cols {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        & .services-details {
+            grid-area: 2/1/3/-1;
+        }
+
+        & .service-img img {
+            max-width: 95%;
+            grid-area: 1/1/2/-1;
+            display: block;
+            margin: 0 auto;
+        }
+
+        & .service-card {
+            gap: 1.5rem;
+            align-items: start;
+            justify-content: start;
+        }
     }
 }
 
@@ -670,9 +835,8 @@ service section
 
     }
 
-
     .announcing-subsetting {
-        .grid-three-cols {
+        & .grid-three-cols {
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: minmax(100px, min-content);
 
@@ -691,21 +855,25 @@ service section
             & .subsetting-info {
                 justify-content: center;
             }
-
-
         }
-
     }
 
+    .services-section {
+        & .services-card {
+            & .card-tittle {
+                font-size: 1.3rem;
+            }
+
+            & .card-para {
+                font-size: 1.4rem;
+            }
+        }
+    }
 }
 
 
 @media (width <=600px) {
     .header-section {
-        & .container {
-            padding: 2rem 2rem 0rem;
-        }
-
         & .fa-bars {
             display: block;
         }
@@ -720,10 +888,6 @@ service section
 
         background-position: -93rem 2rem,
             55rem 2rem;
-
-        & .hero-heading {
-            font-size: 3rem;
-        }
 
         & .btn-group {
             width: 100%;
