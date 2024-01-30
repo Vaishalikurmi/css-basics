@@ -61,6 +61,7 @@ theme rules
 
     /* gray color */
     --gray-clr-light: #c3c6d1;
+    --gray-clr-bold: #616d8a;
 
     /*sizes*/
     --size-base: 1rem;
@@ -100,6 +101,9 @@ theme rules
     --sky-blue-light: #74c0fc;
     --sky-blue-bold: #146ebe;
 
+    /*orange-color*/
+    --orange-bold: #e03131;
+    --orange-light: #ff8787;
 
     /* border-radius: ; */
     --border-radius-lg: calc(var(--size-base) - 0.2rem);
@@ -230,6 +234,10 @@ layout rules
     padding: 0rem 2rem 5rem;
 }
 
+.discovery-section .container:last-child {
+    padding: 0 2rem 5rem;
+}
+
 .grid {
     display: grid;
 }
@@ -311,6 +319,10 @@ module rules
     color: white;
 }
 
+.badge-white {
+    background-color: var(--white-clr);
+}
+
 & .section-hash {
     position: relative;
     display: flex;
@@ -353,9 +365,8 @@ module rules
     font-weight: 700;
 }
 
-.card-para {
+.para {
     font-size: 1.6rem;
-    font-weight: 400;
 }
 
 .card-para {
@@ -370,7 +381,7 @@ module rules
     background-color: var(--white-clr);
 }
 
-.icon-header-white-light {
+.icon-header-gray-light {
     background-color: var(--gray-clr-light);
 }
 
@@ -405,6 +416,24 @@ module rules
 .icon-header-sky-bold {
     background-color: var(--sky-blue-bold);
 }
+
+.icon-header-orange-bold {
+    background-color: var(--orange-bold);
+}
+
+.icon-header-purple-bold {
+    background-color: var(--purple-bold);
+}
+
+.icon-header-purple-light {
+    background-color: var(--purple-light);
+}
+
+.icon-header-orange-light {
+    background-color: var(--orange-light);
+}
+
+
 
 @madia (width<=600px) {
     .header-section .container {
@@ -447,16 +476,29 @@ state rules
     background-color: var(--purple-bold);
 }
 
-.card-yellow:hover {
-    box-shadow: 0 0.3rem var(--yellow-light);
-    border: 0.1rem solid var(--yellow-light);
+.card-shadow-gray {
+    box-shadow: 0 0.6rem var(--gray-clr-light);
 }
 
-.card-pink:hover {
-    box-shadow: 0 0.3rem var(--pink-bold);
-    border: 0.1rem solid var(--pink-bold);
+.card-shadow-sky-bold {
+    box-shadow: 0 0.4rem var(--sky-blue-bold);
 }
 
+.card-shadow-purple-bold {
+    box-shadow: 0 0.4rem var(--purple-bold);
+}
+
+.card-shadow-orange-bold {
+    box-shadow: 0 0.4rem var(--orange-bold);
+}
+
+.card-shadow-green-bold {
+    box-shadow: 0 0.6rem var(--green-bold);
+}
+
+.card-shadow-pink-bold {
+    box-shadow: 0 0.4rem var(--pink-bold);
+}
 
 /* =======================
 header section 
@@ -870,6 +912,8 @@ service section
 /* =======================
 discovery section 
 ======================= */
+
+
 .discovery-section {
     background-color: var(--bg-main);
 
@@ -878,10 +922,66 @@ discovery section
         justify-content: center;
     }
 
+    & .grid-five-col {
+        grid-template-rows: minmax(130px, 1fr) repeat(2, minmax(200px, min-content));
+        gap: 2.5rem;
+    }
+
     & .container:last-child {
 
-        & .grid-five-col {
-            grid-template-rows: 130px auto auto;
+        & .card {
+            position: relative;
+
+            & .badge {
+                position: absolute;
+                left: 35%;
+                top: 0;
+                translate: 50% -50%;
+            }
+
+            & .card-header {
+                height: 60%;
+                padding: 2.5rem 2.4rem 1rem;
+                display: flex;
+                flex-direction: column;
+                clip-path: polygon(100% 0, 100% 100%, 0 79%, 0 0);
+                gap: 2rem;
+                border-radius: var(--border-radius-lg);
+                -webkit-border-radius: var(--border-radius-lg);
+                -moz-border-radius: var(--border-radius-lg);
+                -ms-border-radius: var(--border-radius-lg);
+                -o-border-radius: var(--border-radius-lg);
+
+                & .icon-box {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 2.5rem;
+
+                    & img {
+                        width: 2.5rem;
+                        height: 2.5rem;
+                        object-fit: contain;
+                    }
+                }
+
+
+            }
+
+            & .card-footer {
+                height: 40%;
+                padding: 0rem 2.4rem 2rem;
+
+                & .card-header-tittle {
+                    font-size: 1.5rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.4rem;
+                }
+
+                & .card-para {
+                    margin-top: 1rem;
+                }
+            }
         }
     }
 
@@ -935,19 +1035,19 @@ discovery section
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 2rem;
+            padding: 1.6rem 2rem;
             row-gap: 1rem;
             flex-grow: 1;
             flex-basis: 20rem;
 
             & .category-icon {
-                height: 2.4rem;
-                width: 2.4rem;
+                height: 3rem;
+                width: 3rem;
                 object-fit: contain;
             }
 
             & .icon-tittle {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
         }
     }
