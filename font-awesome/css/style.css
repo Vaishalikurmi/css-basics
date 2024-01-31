@@ -477,7 +477,7 @@ state rules
 }
 
 .card-shadow-gray {
-    box-shadow: 0 0.6rem var(--gray-clr-light);
+    box-shadow: 0 0.4rem var(--gray-clr-light);
 }
 
 .card-shadow-sky-bold {
