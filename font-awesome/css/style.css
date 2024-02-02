@@ -6,7 +6,7 @@ theme rules
     font-family: _font-family;
     src: url("../../font/font-family/CeraRoundPro-Bold.otf");
     display: swap;
-    font-weight: 600;
+    font-weight: 700;
     line-gap-override: 0%;
 }
 
@@ -162,9 +162,9 @@ h1 {
     width: 100%;
     color: var(--heading-main-clr);
     padding: 1.2rem 2.4rem;
-    box-shadow: 0 0.4rem var(--main-clr);
+    box-shadow: 0 0.6rem var(--main-clr);
     border-inline: 0.1rem solid var(--btn-main-bg);
-    border-top: 0.1rem solid var(--btn-main-bg);
+    border: 0.2rem solid var(--main-clr);
     text-wrap: nowrap;
     display: flex;
     justify-content: center;
@@ -244,6 +244,18 @@ layout rules
 
 .creative-custom-section .container {
     padding: 0 2rem 6rem;
+}
+
+.update-section .container {
+    padding: 0 2rem 5rem;
+}
+
+.footer .container:first-child {
+    padding: 5rem 2rem 2rem;
+}
+
+.footer .container:last-child {
+    padding: 0 2rem 7rem;
 }
 
 .grid {
@@ -377,6 +389,7 @@ module rules
 
 .para {
     font-size: 1.6rem;
+    word-spacing: 0.2rem;
 }
 
 .card-para {
@@ -407,7 +420,7 @@ module rules
     background-color: var(--yellow-light);
 }
 
-.icon-header-pink-bold {
+.icon-header-yellow-bold {
     background-color: var(--yellow-bold);
 }
 
@@ -486,6 +499,10 @@ state rules
     background-color: var(--purple-bold);
 }
 
+.btn-gray-light:hover {
+    background-color: var(--gray-clr-light);
+}
+
 .card-shadow-gray {
     box-shadow: 0 0.4rem var(--gray-clr-light);
 }
@@ -510,7 +527,7 @@ state rules
     box-shadow: 0 0.4rem var(--pink-bold);
 }
 
-.btn-success-light:hover {
+.btn-success-bold:hover {
     background-color: var(--green-bold);
 }
 
@@ -527,15 +544,17 @@ header section
         align-items: center;
     }
 
-    & .fa-bars,
-    .fa-xmark {
-        display: none;
-    }
-
     & .nav-wrapper {
         display: flex;
         align-items: center;
         gap: 8rem;
+
+        & img {
+            max-width: 2rem;
+            height: auto;
+            object-fit: contain;
+        }
+
     }
 
     & .nav-wrapper .navbar ul {
@@ -546,6 +565,8 @@ header section
 
     & .nav-menu {
         display: none;
+        background-color: var(--white-clr);
+        backdrop-filter: opacity(0.5);
     }
 
     & :is(.navbar, .nav-menu) .nav-link {
@@ -575,12 +596,26 @@ header section
         text-indent: 0.4rem;
     }
 
+    & .mobile-icons {
+        display: none;
+    }
+
+    & .mobile-icons svg[data-icon="xmark"] {
+        display: none;
+    }
+
     & .fa-xl {
         height: 2.2rem;
         width: 2.2rem;
         color: var(--link-color);
         cursor: pointer;
     }
+
+    header:active .mobile-icons svg[data-icon="xmark"] {
+        visibility: hidden;
+    }
+
+
 }
 
 
@@ -894,7 +929,7 @@ service section
 }
 
 /* =======================
-service section 
+web-brand section 
 ======================= */
 .web-brand-section {
     background-color: var(--main-clr);
@@ -906,6 +941,7 @@ service section
         text-align: center;
         color: var(--yellow-light);
         letter-spacing: 0.5rem;
+        margin-bottom: 3rem;
     }
 
     & .web-brand-lists {
@@ -1010,7 +1046,7 @@ discovery section
         }
     }
 
-    & .discovery-contain {
+    & .discovery-content {
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -1090,9 +1126,11 @@ open source section
         gap: 4rem;
     }
 
-    & .open-source-contain {
+    & .open-source-content {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         gap: 2rem;
         margin-top: 8rem;
 
@@ -1136,7 +1174,7 @@ open source section
 }
 
 /* =======================
-state rules
+creative-custom rules
 ======================= */
 .creative-custom-section {
     background-color: var(--bg-main);
@@ -1150,14 +1188,16 @@ state rules
         height: auto;
     }
 
-    & .creative-custom-contain, .creative-custom-img {
+    & .creative-custom-content, .creative-custom-img {
         margin-bottom: 3rem;
     }
 
-    & .creative-custom-contain {
+    & .creative-custom-content {
         margin-top: 6rem;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         gap: 3rem;
 
         & .section-hash-subheading {
@@ -1166,20 +1206,21 @@ state rules
 
         & button img {
             height: 2rem;
-            width: 2rem;
+            max-width: 2rem;
             object-fit: contain;
         }
     }
 
     & .creative-custom-card {
         display: flex;
-        align-items: start;
+        align-items: center;
         column-gap: 3rem;
         background-color: var(--white-clr);
         padding: 2.4rem 2.8rem;
+        cursor: pointer;
 
         & img {
-            width: 3.5rem;
+            max-width: 3.5rem;
             height: auto;
             object-fit: contain;
         }
@@ -1191,6 +1232,126 @@ state rules
 
 }
 
+/* =======================
+update section 
+======================= */
+
+.update-section {
+    background-color: var(--yellow-bold);
+
+    & .grid {
+        align-items: center;
+        gap: 2rem;
+    }
+
+    & .grid-two-cols {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    & .update-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 3rem;
+
+        & .tittle {
+            letter-spacing: 0.6rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+    }
+
+    & button {
+        height: 40%;
+        width: 90%;
+
+        & img {
+            max-width: 2rem;
+            height: auto;
+            object-fit: contain;
+        }
+    }
+
+}
+
+
+
+/* =======================
+footer section 
+======================= */
+
+.footer * {
+    color: var(--white-clr);
+
+}
+
+.footer {
+    background-color: var(--main-clr);
+
+    & .grid {
+        gap: 3rem;
+    }
+
+    & .grid-four-col {
+        grid-template-columns: 2fr repeat(3, 1fr);
+    }
+
+    & .footer-heading--tittle, .footer-links :is(.footer-heading, h3, a) {
+        font-size: 1.6rem;
+    }
+
+    & .container:first-child {
+
+        & .footer-links {
+            margin-left: 8rem;
+        }
+
+    }
+
+    & .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 1.6rem;
+
+        & img {
+            max-width: 2rem;
+            height: auto;
+            object-fit: contain;
+        }
+
+    }
+
+    & .footer-links {
+        & .footer-heading {
+            color: var(--link-color);
+            margin-top: 1rem;
+        }
+    }
+
+    & ul li a {
+        padding: 0.5rem 0;
+    }
+
+    & .container:last-child {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        gap: 1.4rem;
+
+        & .copy-right-list {
+            display: flex;
+            gap: 2rem;
+        }
+
+        & li, .copy-right-list {
+            font-size: 1.4rem;
+        }
+    }
+
+}
 
 @media (width<=1100px) {
 
@@ -1289,10 +1450,32 @@ state rules
         }
     }
 
+    .footer {
+
+        & .grid-four-col {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        & .footer-content {
+            grid-area: 1/1/2/-1;
+        }
+
+        & .container:first-child {
+
+            & .footer-links {
+                margin-left: 0rem;
+            }
+        }
+
+    }
+
 }
 
 @media (width <=778px) {
     .header-section {
+
+        height: auto;
+
         & .nav-wrapper .navbar ul {
             gap: 2rem;
         }
@@ -1343,20 +1526,26 @@ state rules
 
     .creative-custom-section {
 
-        .grid-two-cols {
+        & .grid-two-cols {
             grid-template-columns: 1fr;
         }
 
     }
 
+    .update-section {
+        & .grid-two-cols {
+            grid-template-columns: 1fr;
+        }
 
-
-
+        & button {
+            height: 100%;
+            width: 100%;
+        }
+    }
 }
 
 @media (width <=668px) {
     .discovery-section {
-        width: 100%;
 
         & .grid-five-col {
             grid-template-columns: repeat(1, minmax(200px, min-content));
@@ -1369,11 +1558,21 @@ state rules
         }
 
     }
+
+    .web-brand-section {
+        & .web-brand-heading {
+            font-size: 0.7rem;
+        }
+    }
+
 }
 
 @media (width <=600px) {
     .header-section {
-        & .fa-bars {
+
+        height: auto;
+
+        & .mobile-icons {
             display: block;
         }
 
@@ -1381,6 +1580,11 @@ state rules
             display: none;
             padding: 0;
         }
+
+        & .nav-menu {
+            visibility: hidden;
+        }
+
     }
 
     .hero-section {
@@ -1398,4 +1602,17 @@ state rules
         }
     }
 
+}
+
+@media (width <=448px) {
+    .footer {
+
+        & .container:last-child {
+            & .copy-right-list {
+                flex-direction: column;
+                gap: 0rem;
+                margin-top: 2rem;
+            }
+        }
+    }
 }

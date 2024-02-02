@@ -8,8 +8,3 @@ menuBar.addEventListener("click", function () {
   menuBar.style.display = "none";
 });
 
-closeMenu.addEventListener("click", function () {
-  mobileMenu.style.display = "none";
-  closeMenu.style.display = "none";
-  menuBar.style.display = "block";
-});
