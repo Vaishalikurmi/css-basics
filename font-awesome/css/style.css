@@ -601,7 +601,7 @@ header section
     }
 
     & .mobile-icons svg[data-icon="xmark"] {
-        display: none;
+        display: block;
     }
 
     & .fa-xl {
