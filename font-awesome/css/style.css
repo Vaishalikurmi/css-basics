@@ -566,7 +566,7 @@ header section
     & .nav-menu {
         display: none;
         background-color: var(--white-clr);
-        backdrop-filter: opacity(0.5);
+        backdrop-filter: opacity(0.4);
     }
 
     & :is(.navbar, .nav-menu) .nav-link {
