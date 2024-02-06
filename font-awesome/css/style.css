@@ -223,7 +223,7 @@ layout rules
 }
 
 .hero-section .container {
-    padding: 4rem 6rem 2rem;
+    padding: 4rem 3rem 4rem;
 }
 
 .subsetting-info-section .container {
@@ -644,6 +644,30 @@ hero section
         max-width: 2.8rem;
         height: auto;
     }
+}
+
+.hero-heading::after {
+    content: "website.";
+    color: var(--yellow-bold);
+    translate: 10px 0;
+    animation: sliding 09s linear;
+    -webkit-animation: sliding 09s linear;
+}
+
+@keyframes sliding {
+
+    40% {
+        content: "designs.";
+    }
+
+    75% {
+        content: "Frames.";
+    }
+
+    100% {
+        content: "services.";
+    }
+
 }
 
 /* =======================
@@ -1545,6 +1569,12 @@ footer section
 }
 
 @media (width <=668px) {
+
+
+    html {
+        font-size: 50%;
+    }
+
     .discovery-section {
 
         & .grid-five-col {
